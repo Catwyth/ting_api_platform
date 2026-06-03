@@ -23,11 +23,7 @@ class FilterWarmer implements CacheWarmerInterface
         return false;
     }
 
-    /**
-     * @param string $cacheDir
-     * @return string[]
-     */
-    public function warmUp(string $cacheDir)
+    public function warmUp(string $cacheDir, ?string $buildDir = null): array
     {
         $cacheDir .= '/ting_api_platform';
         if (!file_exists($cacheDir)) {
